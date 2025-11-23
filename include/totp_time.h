@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #ifndef TOTP_TIME_H
 #define TOTP_TIME_H
 

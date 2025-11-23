@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #ifndef STM32_RTC_TIME_H
 #define STM32_RTC_TIME_H
 

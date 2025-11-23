@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #include "stm32_rtc_time.h"
 
 static int is_leap_year(int year) {

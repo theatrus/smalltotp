@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #include "hmac_sha1.h"
 #include <string.h>
 

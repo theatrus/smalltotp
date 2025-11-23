@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #ifndef HMAC_SHA1_H
 #define HMAC_SHA1_H
 

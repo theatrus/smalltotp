@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 #include "base32.h"
 
 static int base32_char_to_val(char c) {
