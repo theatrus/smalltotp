@@ -11,6 +11,10 @@
 #include "base32.h"
 #include "usart.h"
 
+/* Use integer-only printf to save code size */
+int iprintf(const char *format, ...);
+#define printf iprintf
+
 /* STM32G0 register definitions */
 #define RCC_BASE            0x40021000
 #define RCC_CR              (*(volatile uint32_t *)(RCC_BASE + 0x00))
@@ -159,12 +163,14 @@ static void run_benchmark(void) {
     time_end = get_milliseconds();
     total_time = time_end - time_start;
 
-    float avg_ms = (float)total_time / iterations;
+    /* Calculate average time using integer-only math */
+    uint32_t avg_ms_int = total_time / iterations;
+    uint32_t avg_ms_frac = ((total_time % iterations) * 100) / iterations;
     uint32_t codes_per_sec = total_time > 0 ? (iterations * 1000) / total_time : 0;
 
     printf("\nResults:\n");
     printf("  Total time: %lu ms\n", (unsigned long)total_time);
-    printf("  Average time: %.2f ms per code\n", avg_ms);
+    printf("  Average time: %lu.%02lu ms per code\n", (unsigned long)avg_ms_int, (unsigned long)avg_ms_frac);
     printf("  Codes per second: %lu\n", (unsigned long)codes_per_sec);
 
     /* Memory usage estimate */
