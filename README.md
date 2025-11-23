@@ -57,6 +57,18 @@ make test
 make clean
 ```
 
+### STM32 Example
+
+A complete STM32G0 benchmark example is provided in `examples/stm32g0_benchmark/`:
+
+```bash
+cd examples/stm32g0_benchmark
+make
+make flash
+```
+
+See `examples/stm32g0_benchmark/README.md` for details on running benchmarks on real STM32 hardware.
+
 ## Usage
 
 ### Basic TOTP Generation
